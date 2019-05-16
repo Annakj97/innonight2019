@@ -19,7 +19,16 @@ class Prepare:
 		data[13] = preprocessing.normalize([data[13]])	# pdays
 		data[14] = preprocessing.normalize([data[14]])	# previous
 
-	#def _binary(self, data):
+	def _binary(self, data):
+		self._binary_para(self,data,6) #default
+		self._binary_para(self,data,8) #housing
+		self._binary_para(self,data,9) #loan
+	def _binary_para(self,data,col):
+		for int i in data[col]	# is yes or no
+			if data[col][i] == "no"
+				data[col][i]=0
+			else
+				data[col][i]=1
 
 	def _one_hot(self):
 		data = [['married', 'single', 'divorced', 'married', 'married', 'single', 'single', 'single', 'married', 'single'],['secondary', 'secondary','primary', 'secondary','primary', 'tertiary', 'primary', 'unknown']]
